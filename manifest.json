@@ -1,19 +1,22 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "TAULuncher",
   "version": "1.0.0",
   "permissions": ["storage"],
   "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_title": "user data"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://nidp.tau.ac.il/nidp/*",
-        "https://moodle.tau.ac.il/",
-        "https://www.ims.tau.ac.il/Tal/"
+        "*://nidp.tau.ac.il/nidp/*",
+        "*://moodle.tau.ac.il/",
+        "*://moodle.tau.ac.il/my/",
+        "*://www.ims.tau.ac.il/Tal/",
+        "*://*.ims.tau.ac.il/Tal/",
+        "*://ims.tau.ac.il/Tal/"
       ],
       "js": ["Content.js"]
     }
