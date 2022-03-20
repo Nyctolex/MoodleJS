@@ -1,0 +1,101 @@
+.center {
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.switch {
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #7c0076;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #a621f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 30px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.label_container {
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    border: none;
+    outline: none;
+    background: #020202;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+body {
+    background-color: rgb(245, 245, 245);
+    border-radius: 40px;
+}
