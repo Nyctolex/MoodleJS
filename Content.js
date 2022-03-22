@@ -5,7 +5,7 @@ window.onload = function () {
             if (url.endsWith('/')) {
                 url = url.slice(0, -1);
             }
-            if (url.endsWith("moodle.tau.ac.il/my")) {
+            if (url.includes("moodle.tau.ac.il")) {
                 if (document.getElementsByClassName("btn btn-info").length > 0) {
                     document.location.href = "https://moodle.tau.ac.il/login/index.php";
                 }

@@ -12,8 +12,7 @@
     {
       "matches": [
         "*://nidp.tau.ac.il/nidp/*",
-        "*://moodle.tau.ac.il/",
-        "*://moodle.tau.ac.il/my/",
+        "*://moodle.tau.ac.il/*",
         "*://www.ims.tau.ac.il/Tal/",
         "*://*.ims.tau.ac.il/Tal/",
         "*://ims.tau.ac.il/Tal/"
