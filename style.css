@@ -1,13 +1,14 @@
 .center {
     position: absolute;
-
-    left: 50%;
+    /* text-align: center; */
+    left: 40%;
+    transition: visibility 1s, opacity 0.5s linear, display 1s;
     transform: translate(-50%, -50%)
 }
 .switch {
-    text-align: center;
-    align-items: center;
-    position: relative;
+    /* text-align: center; */
+    /* align-items: center; */
+    position: absolute;
     display: inline-block;
     width: 45px;
     height: 20px;
@@ -20,8 +21,8 @@
 }
 
 .slider {
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -33,9 +34,22 @@
     transition: 0.4s;
 }
 
-.slider:before {
+
+.slider:after {
     position: absolute;
-    content: "";
+    height: 17px;
+    width: 17px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    content: '';
+
+    position: absolute;
     height: 17px;
     width: 17px;
     left: 2px;
@@ -46,18 +60,22 @@
 }
 
 input:checked + .slider {
-    background-color: #7c0076;
+
+    background-color: #F98012;
 }
+
 
 input:focus + .slider {
     box-shadow: 0 0 1px #a621f3;
 }
 
 input:checked + .slider:before {
+    font-weight: bold;
     -webkit-transform: translateX(24px);
     -ms-transform: translateX(24px);
     transform: translateX(24px);
 }
+
 
 /* Rounded sliders */
 .slider.round {
@@ -82,20 +100,53 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
 }
-button {
-    border: none;
-    outline: none;
-    background: #020202;
-    color: #fff;
-    font-size: 22px;
-    border-radius: 40px;
-    text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
+
+.link_label {
+    height: 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #F98012;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    font-size: 15px;
+    width: 200px;
 }
+.link_label:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    font-weight: 800;
+    background-color: #d16d10;
+    letter-spacing: 1px;
+}
+
 body {
     background-color: rgb(245, 245, 245);
     border-radius: 40px;
+}
+
+
+.down {
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.settingsTab {
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    transition: max-height 1.5s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
 }
