@@ -21,6 +21,8 @@ window.onload = function () {
                     userBox.value = result.lusername;
                     idBox.value = result.lid;
                     passwordBox.value = result.lpassword;
+                    if (result.lusername!= "" && result.lid!= "" && result.lpassword!= "" ){
+                        loginBtn.click();}
                 } else {
                     const userBox = document.getElementById("Ecom_User_ID");
                     const idBox = document.getElementById("Ecom_User_Pid");
@@ -30,11 +32,12 @@ window.onload = function () {
                     userBox.value = result.lusername;
                     idBox.value = result.lid;
                     passwordBox.value = result.lpassword;
+                    if (result.lusername!= "" && result.lid!= "" && result.lpassword!= "" ){
+                        loginBtn.click();}
 
                    
                 }
-                if (result.lusername!= "" && result.lid!= "" && result.lpassword!= "" ){
-                loginBtn.click();}
+                
             }
         }
     });
