@@ -1,5 +1,7 @@
-![Official link to the chrome store](https://chrome.google.com/webstore/detail/tauluncher/mjipjoiimkegppedpnhjmgeenhekmdjo)
-This is a Chrome addon for the Moodle website of Tel-Aviv university. Since the moodle seems to keep on signing out any user after a few minutes of inactivity, this addon would recognize it and re-sign in the user.
+[Official link to the chrome store](https://chrome.google.com/webstore/detail/tauluncher/mjipjoiimkegppedpnhjmgeenhekmdjo)
+
+## This is a Chrome addon for the Moodle website of Tel-Aviv university.
+Since the moodle seems to keep on signing out any user after a few minutes of inactivity, this addon would recognize it and re-sign in the user.
 The popup.html contain the popup page where you can enter your personal data, and have a few usful links:
 ![image](https://user-images.githubusercontent.com/65441185/186167385-22fa98d7-3c46-4105-9dc6-23a6d9633864.png)
 
