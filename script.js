@@ -46,14 +46,35 @@ function toggleShowSettings() {
     arrow.style.webkitTransform = "rotate(0deg)";
   }
 }
+// open a new tab in a new window if the current one is empty. ow it opens it in the current window
+function openTab(newUrl){
+  var query = { active: true, currentWindow: true };
+  chrome.tabs.query(query, (tabs)=>{
+    currentTab = tabs[0];
+    currentTabUrl = currentTab.url
+    // open it in current tab if this is an empty tab
+    if (currentTabUrl.includes("newtab")){
+      chrome.tabs.update({ url:  newUrl});
+    } else{
+      //open it in a new current tab if this is not empty tab
+      window.open(newUrl);
+    }
+  });
+
+}
 
 window.onload = function () {
+
+  //moodle button
+  console.log("Button");
   document.getElementById("moodleBtn").addEventListener("click", () => {
-    window.open("https://moodle.tau.ac.il/login/index.php");
+    openTab("https://moodle.tau.ac.il/login/index.php");
   });
+  //Student info button
   document.getElementById("studentInfoBtn").addEventListener("click", () => {
-    window.open("https://www.ims.tau.ac.il/Tal");
+    openTab("https://www.ims.tau.ac.il/Tal");
   });
+  //more Settings
   document
     .getElementById("moreSettings")
     .addEventListener("click", toggleShowSettings);
