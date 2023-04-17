@@ -46,20 +46,20 @@ function get_submit_date(){
 
 function add_calander(){
 
-    console.log("trying to add to calander")
     tasks = document.getElementsByClassName("w-100 event-name-container text-truncate line-height-3")
-    console.log("task leg "+ tasks.length)
+    if (tasks.length === 0){
+        return false
+    }
     for (task of tasks){
-        console.log("in task")
         try{
             
             link = task.getElementsByTagName("a")[0].attributes["href"].value
-    task_name = task.getElementsByTagName("a")[0].attributes["title"].value
-    subject = removeNumericValues(task.getElementsByClassName('text-truncate mb-0 pt-1')[0].innerHTML)
-    title = task_name + subject
-    submitDate = get_submit_date()
-    calanderLink = generateGoogleCalendarLink(submitDate, title, "")
-    addLinkToHTML(task, calanderLink, "Add to calander")
+            task_name = task.getElementsByTagName("a")[0].attributes["title"].value
+            subject = removeNumericValues(task.getElementsByClassName('text-truncate mb-0 pt-1')[0].innerHTML)
+            title = task_name + subject
+            submitDate = get_submit_date()
+            calanderLink = generateGoogleCalendarLink(submitDate, title, "")
+            addLinkToHTML(task, calanderLink, "Add to calander")
         }
           catch(err) {
             // if any error, Code throws the error
@@ -70,15 +70,14 @@ function add_calander(){
             //this block is optional
           }
     }
+    return true
 }
 
 
-function calander_delay(){
-    setTimeout(function() {
-        console.log('My JavaScript code is running after a delay of 5 seconds.');
-        add_calander();
-        // add your JavaScript code here
-      }, 5000); // 5000 milliseconds = 5 seconds
+async function calander_delay(){
+    while (!add_calander()) {
+        await new Promise(resolve => setTimeout(resolve, 1000)); // wait for 1 second before checking again
+      }
 }
 
 
