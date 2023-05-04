@@ -5,7 +5,7 @@
 
 function generateGoogleCalendarLink(date, title, description) {
     const startDate = date.toISOString().replace(/-|:|\.\d+/g, '');
-    const endDate = new Date(date.getTime() + (60 * 60 * 1000)).toISOString().replace(/-|:|\.\d+/g, ''); // add 1 hour to the date for the end time
+    const endDate = new Date(date.getTime() + (60 * 5 * 1000)).toISOString().replace(/-|:|\.\d+/g, ''); // add 1 hour to the date for the end time
     const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&dates=${startDate}/${endDate}&text=${title}&details=${description}`;
     return googleCalendarUrl;
   }
@@ -38,10 +38,6 @@ function get_submit_date(){
 
 
 }
-
-// window.onload = function() {
-
-// }
 
 
 function add_calander(){
@@ -76,10 +72,9 @@ function add_calander(){
 
 async function calander_delay(){
     while (!add_calander()) {
-        await new Promise(resolve => setTimeout(resolve, 1000)); // wait for 1 second before checking again
+        await new Promise(resolve => setTimeout(resolve, 2000)); // wait for 1 second before checking again
       }
 }
-
 
 
 window.onload = function () {
